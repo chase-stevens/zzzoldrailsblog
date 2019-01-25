@@ -1,0 +1,14 @@
+<h1>My Blog Posts</h1>
+<% @articles.each do |article| %>
+  <div class="container">
+    <h2>
+      <%= link_to article.title, article_path(article) %>
+    </h2>
+    <p>
+      <%= article.created_at.strftime("%F") %>
+    </p>
+    <p>
+      <%= article.get_excerpt %>
+    </p>
+  </div>
+<% end %>
