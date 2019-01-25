@@ -3,7 +3,7 @@
 </h1>
 
 <p>
-  <%= @article.text %>
+  <%= markdown(@article.text) %>
 </p>
 
 <%= link_to 'Back', articles_path %>
