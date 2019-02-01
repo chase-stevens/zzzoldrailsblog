@@ -6,10 +6,13 @@
 
   <p>
     <%= form.label :text %><br>
-    <%= form.text_area :text, size: "100x25", value: "---\ntitle: \npublished: false\ndescription: \ntags: \n---\n" %>
+    <%= form.text_area :text, size: "100x25" %>
   </p>
 
   <p>
     <%= form.submit %>
   </p>
+<% end %>
+
+<%= button_tag "Preview" do %>
 <% end %>

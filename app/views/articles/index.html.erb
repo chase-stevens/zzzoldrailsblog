@@ -8,7 +8,7 @@
       <%= article.created_at.strftime("%F") %>
     </p>
     <p>
-      <%= article.get_excerpt %>
+      <%= markdown(article.get_excerpt) %>
     </p>
   </div>
 <% end %>
