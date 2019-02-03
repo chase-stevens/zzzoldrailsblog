@@ -8,7 +8,7 @@ class Article < ApplicationRecord
 
   def self.search(search)
     if search
-      Article.where(title: search).to_a
+      Article.where("title LIKE ?", "%#{search}%").to_a
     else
       Article.all
     end
