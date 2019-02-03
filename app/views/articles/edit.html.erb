@@ -1,4 +1,7 @@
-<h1>New Article</h1>
+<h1>
+  <%= link_to "YARB |", articles_path %>
+  Edit <%= @article.title %>
+</h1>
 
 <% flash.each do |key, value| %>
   <%= content_tag :div, value, class: "flash #{key}" %>

@@ -1,9 +1,17 @@
 <h1>
+  <%= link_to "YARB |", articles_path %>
   <%= @article.title %>
 </h1>
 
-<p>
-  <%= markdown(@article.text) %>
-</p>
+<div class="container">
+  Published on <%= @article.created_at.strftime("%b %-d") %>
+  <p>---</p>
+</div>
 
-<%= link_to 'Back', articles_path %>
+<div class="container">
+  <%= markdown(@article.text) %>
+</div>
+
+<div class="container">
+  <%= link_to 'Back', articles_path %>
+</div>

@@ -13,4 +13,5 @@ class Article < ApplicationRecord
       Article.all
     end
   end
+  
 end
