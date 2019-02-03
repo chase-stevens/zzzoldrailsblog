@@ -5,4 +5,12 @@ class Article < ApplicationRecord
   def get_excerpt
     text.truncate(250)
   end
+
+  def self.search(search)
+    if search
+      Article.where(title: search).to_a
+    else
+      Article.all
+    end
+  end
 end
