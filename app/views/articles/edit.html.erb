@@ -1,10 +1,3 @@
-
-<h1>New Article</h1>
-
-<% flash.each do |key, value| %>
-  <%= content_tag :div, value, class: "flash #{key}" %>
-<% end %>
-
 <%= form_with scope: :article, url: articles_path, local: true do |form| %>
   <p>
     <%= form.label :title %><br>
@@ -19,4 +12,7 @@
   <p>
     <%= form.submit %>
   </p>
+<% end %>
+
+<%= button_tag "Preview" do %>
 <% end %>

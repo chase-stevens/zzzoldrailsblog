@@ -13,15 +13,21 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    @article.save
-    redirect_to @article
+    if @article.save
+      redirect_to @article
+    else
+      flash[:danger] = "Post was not created."
+      render 'new'
+    end
   end
 
   def edit
-    @user = User.find(params[:id])
+    @article = Article.find(params[:id])
   end
 
   def update
+    @article.save
+    redirect_to @article
   end
 
   def destroy
