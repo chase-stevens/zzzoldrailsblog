@@ -1,7 +1,8 @@
 <h1><%= link_to 'YARB', root_url %></h1>
-<h3 class='text-center'> Yet Another Rails Blog by Chase Stevens</h3>
+<h3 class='text-center'> Yet Another Rails Blog by
+  <%= link_to 'Chase Stevens', 'https://dev.to/chasestevens' %></h3>
 
-<div class='container text-center'>
+<div class='container'>
   <%= form_tag articles_path, :method => 'get' do %>
     <%= text_field_tag :search, params[:search],  placeholder: 'Search for a post' %>
     <%= submit_tag 'Search', :name => nil %>
