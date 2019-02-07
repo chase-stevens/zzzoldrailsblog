@@ -1,23 +1,27 @@
 <h1>YARB</h1>
-<h3 class="text-center"> Yet Another Rails Blog by Chase Stevens</h3>
+<h3 class='text-center'> Yet Another Rails Blog by Chase Stevens</h3>
 
-<div class="container text-center">
+<div class='container text-center'>
   <%= form_tag articles_path, :method => 'get' do %>
-    <%= text_field_tag :search, params[:search],  placeholder: "Search for a post" %>
-    <%= submit_tag "Search", :name => nil %>
+    <%= text_field_tag :search, params[:search],  placeholder: 'Search for a post' %>
+    <%= submit_tag 'Search', :name => nil %>
   <% end %>
 </div>
 
 <% @articles.each do |article| %>
-  <div class="container">
+  <div class='container'>
     <h2>
       <%= link_to article.title, article_path(article) %>
     </h2>
     <p>
-      <strong><%= article.created_at.strftime("%b %-d") %></strong>
+      <strong><%= article.created_at.strftime('%b %-d') %></strong>
     </p>
     <p>
       <%= markdown(article.get_excerpt) %>
     </p>
+    <%= link_to 'Edit', edit_article_path(article) %>
+    <%= link_to 'Delete', article_path(article),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %>
   </div>
 <% end %>
